@@ -1,0 +1,36 @@
+
+//2016JAN COS-213-OL011
+//Final 4
+
+#include <iostream>
+using namespace std;
+
+// Template for switching two numbers
+template <typename T>
+void switchNumbers(T &first, T &second) {
+  T temp = second;
+  second = first;
+  first = temp;
+}
+
+int main() {
+  // Declare variables to test with
+  int a = 1, b = 2;
+  long c = 190238, d = 20839;
+
+  // Print all the variables
+  cout << "A = " << a << "   B = " << b <<
+    "\nC = " << c << "   D = " << d << endl;
+
+  // Switch all the variables
+  cout << "Running switchNumbers() on all the variables." << endl;
+  switchNumbers(a, b);
+ 
+  switchNumbers(c, d);
+
+  // Print all the variables again
+  cout << "A = " << a << "   B = " << b <<
+    "\nC = " << c << "   D = " << d << endl;
+  
+  
+}
