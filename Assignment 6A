@@ -1,6 +1,3 @@
-//2016JAN COS-213-OL011
-//Written Assignment 6 A Question 2
-
 //Create a namespace titled globalType that contains four members. 
 //The members should be two named constants, n and rate. 
 //It should also contain a variable count and the function printResult. 
