@@ -1,6 +1,3 @@
-//2016JAN COS-213-OL011
-//Written Assignment 5 A Question 1
-
 
 /*Design a fraction class. The class should have 2 data members to represent the numerator and denominator. 
 Both of these numbers should obviously be integers. 
