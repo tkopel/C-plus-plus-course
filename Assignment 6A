@@ -1,0 +1,48 @@
+//2016JAN COS-213-OL011
+//Written Assignment 6 A Question 2
+
+//Create a namespace titled globalType that contains four members. 
+//The members should be two named constants, n and rate. 
+//It should also contain a variable count and the function printResult. 
+//Describe how you would access these 4 members in a program. 
+//Do not forget to use the scope resolution operator.
+
+#include <iostream>
+using namespace std;
+
+namespace globalType {
+  const int n = 10;
+  const float rate = 6.54;
+  int count = 32;
+  void printResult();
+
+}
+
+
+const int n = 4;
+const float rate = 4.39;
+int count = 15;
+
+int main() {
+  
+
+  cout << "From main:" << endl <<
+    "n = " << n << endl <<
+    "rate = " << rate << endl <<
+    "count = " << count << endl <<
+    "::n = " << ::n << endl <<
+    "::rate = " << ::rate << endl <<
+    "::count = " << ::count << endl;
+
+  globalType::printResult();
+}
+
+void globalType::printResult() {
+  cout << "From printResult function:" << endl <<
+    "n = " << n << endl <<
+    "rate = " << rate << endl <<
+    "count = " << count << endl <<
+    "::n = " << ::n << endl <<
+    "::rate = " << ::rate << endl <<
+    "::count = " << ::count << endl;
+}
