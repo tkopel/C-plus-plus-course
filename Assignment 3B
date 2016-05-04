@@ -1,0 +1,40 @@
+//2016JAN COS-213-OL011
+//Written Assignment 3 Part B Question 1
+
+//Define a class called Plot that has private members of length and width. 
+//Include a constructor and a public function that calculates the area and the 
+//length of the boundary of the field. Use public functions in a program that 
+//computes and displays the area and the length of the boundary of the plot where 
+//the length and width are 7 and 9 respectively. Hint: The length of the boundary 
+//is 2 * (length + width).
+
+#include <iostream>
+using namespace std;
+
+class Plot //define a class called Plot
+{
+public: //defining public functions
+       Plot (int, int);
+	int boundaryL(){return  2 * ( length + width );}; //calculations for defining the length of the boundary
+	int area(){return (length * width);}; //calculations for defining the area
+private: //defining private members
+	int length; 
+	int width;
+
+};
+
+//allows values to be entered into function and pairs private members with public function
+ Plot::Plot (int l, int w)
+{
+    length = l;
+    width = w;
+}
+
+int main()
+{
+	//perform and display output for Plot calculations as stated above with the value of 7 for length and 9 for width
+       Plot rec(7,9); 
+       cout << "The area for a length of 7 and width of 9 is: " << rec.area() << endl;
+       cout << "The length of the boundary for a length of 7 and width of 9 is: " << rec.boundaryL() << endl;
+       return 0;
+}
