@@ -1,6 +1,3 @@
-//2016JAN COS-213-OL011
-//Written Assignment 3 Part B Question 1
-
 //Define a class called Plot that has private members of length and width. 
 //Include a constructor and a public function that calculates the area and the 
 //length of the boundary of the field. Use public functions in a program that 
