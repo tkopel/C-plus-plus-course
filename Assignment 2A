@@ -1,0 +1,36 @@
+//2016JAN COS-213-OL011
+//Written Assignment 2 Part A Question 2
+
+//Create a program that reads five numbers, finds their sum, and then 
+//prints the numbers in reverse order. Use arrays as a tool in your program.
+
+#include <iostream>
+using namespace std;
+int main ()
+{
+	const int numlist = 5;
+	int num[ numlist]; //declaring array called num and declaring the array consists of 5 elements
+	int total = 0 ;
+	int numcount; //declaring value for our starting sum and counter
+	
+	cout << "You will enter 5 integers into an array. These numbers\n"; //user instruction and request for user input
+	cout << "will be summed and then printed in reverse order.\n";
+	for (numcount = 0; numcount < numlist; numcount++)
+	{
+		cout << "\nPlease enter element " << numcount << " of the array : ";
+		cin >> num[numcount];
+	}
+	for ( int i =0; i< numlist; i++) //instructions for adding each element together to reach a sum
+	{
+		total = total + num[i];
+	}
+	cout << "\nThe sum of the array elememts is: " <<total << endl; //diplays results
+	cout << "\nThe elements in reverse order are: \n";
+
+	for ( int i =numlist - 1 ; i>=0; i--) //prints entries in reverse
+	{
+		cout << num[ i ] << endl;
+	}
+	
+	return 0;
+}
