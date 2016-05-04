@@ -1,0 +1,45 @@
+//2016JAN COS-213-OL011
+//Written Assignment 1 Part B Question 2
+
+//Write a program using a function and a series of if…else statements. 
+//The user should be prompted to enter a number in main. 
+//The function is called and the number entered is passed to the function. 
+//This function parameter will then be used in a series of if…else statements to... 
+//...discover and print out the number word within the function (for example, 1=one, 2=two, 3=three, etc.).
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	float digit; /*variable created called digit. it is an integer value*/
+	
+	cout << "Enter a single digit between 0 and 9: "; /*Instructions for the user*/
+	cin >> digit; /*allows the user to input a number for the variable digit*/
+	
+	if (digit == 0) /*if the value entered for digit equals x then display y*/
+		cout << "\nThe digit you entered is zero.\n";
+	else if (digit == 1) /*proceeds down these statements until the value entered for digit is found*/
+		cout <<"\nThe digit you enetered is one.\n";
+	else if (digit == 2)
+		cout <<"\nThe digit you entered is two.\n";
+	else if (digit == 3)
+		cout <<"\nThe digit you entered is three.\n";
+	else if (digit == 4)
+		cout <<"\nThe digit you entered is four.\n";
+	else if (digit == 5)
+		cout <<"\nThe digit you entered is five.\n";
+	else if (digit == 6)
+		cout <<"\nThe digit you entered is six.\n";
+	else if (digit == 7)
+		cout <<"\nThe digit you entered is seven.\n";
+	else if (digit == 8)
+		cout <<"\nThe digit you entered is eight.\n";
+	else if (digit == 9)
+		cout <<"\nThe digit you entered is nine.\n";
+	else /*if value entered for digit does not equal any of the above the following message will be displayed*/
+		cout <<"\nAn invalid digit was entered.\n";
+		
+		return 0;
+}
