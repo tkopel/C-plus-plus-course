@@ -1,0 +1,134 @@
+//2016JAN COS-213-OL011
+//Written Assignment 5 A Question 1
+
+
+/*Design a fraction class. The class should have 2 data members to represent the numerator and denominator. 
+Both of these numbers should obviously be integers. 
+It should be able to display a fraction and include an operator for performing multiplication of fractions.
+Construct the fraction class with 3 constructors. 
+The first is the default. 
+The second constructor should allow us to create a fraction that represents a whole number. 
+The third constructor should allow us to specify the numerator and denominator of a new fraction object. 
+The public functions should include functions for respectively getting the numerator and denominator, 
+setting the respective numerator and denominator, multiplying fractions, and displaying the fraction.
+You should then use this class in a program that multiplies fractions. (Hint: you can create 3 fraction objects f1, f2, and f3. 
+You can use the public function readFraction that reads 2 fractions f1 and f2. 
+You can then use the statement f3 = f1.multiply(f2) to calculate f1 * f2 and assign the result to f3.)
+The function's input prompts should be "Enter 1st fraction" and "Enter 2nd fraction" where the
+user enters the appropriate fractions. In addition, the program needs to display the result of the multiplication operation in the readable format:
+3/4 * 5/6 = 15/24
+This result should be displayed on one line.
+Test the function with the fractions 3/4 and 5/6 and also with 1/2 and 1*/
+
+
+#include <iostream>
+#include <stdexcept>
+#include <sstream>
+using namespace std;
+
+// A function to convert numbers to strings;
+template <typename T>
+string NumberToString ( T Number )
+{
+  ostringstream ss;
+  ss << Number;
+  return ss.str();
+}
+
+// The fraction class
+class Fraction {
+public:
+  // First constructor. You can either call it with a numerator and denominator,
+  // just with a numerator, or empty, in which case the number is 1.
+  // The assignment asked for 3 constructors, but I have only put in 1, since
+  // this method of designing the constructor performs the function of all three of
+  // the constuctor types that were requested.
+  Fraction(int n = 1, int d = 1) {
+      setNumerator(n);
+      setDenominator(d);
+      
+  }
+  
+  void setNumerator(int n) {
+    numerator = n;
+  }
+  
+  int getNumerator() {
+    return numerator;
+  }
+
+  void setDenominator(int d) {
+    if(d != 0)
+      denominator = d;
+    else
+      throw invalid_argument("Denominator must not be equal to 0");
+  }
+  
+  int getDenominator() {
+    return denominator;
+  }
+
+  float getFractionAsFloat() {
+    return numerator/denominator;
+  }
+
+  string toString() {
+    string tmp;
+    tmp = NumberToString(numerator) + "/" + NumberToString(denominator);
+    return tmp;
+  }
+
+  void readFraction() {
+    int n, d;
+    cout << "Please enter the numerator: ";
+    cin >> n;
+    setNumerator(n);
+    cout << "and now the denominator: ";
+    cin >> d;
+    setDenominator(d);
+
+  }
+  
+  Fraction operator*( const Fraction &f ) const {
+    Fraction tmp;
+    tmp.setNumerator(numerator * f.numerator);
+    tmp.setDenominator(denominator * f.denominator);
+    return tmp;
+  }
+
+private:
+  int numerator;
+  int denominator;
+};
+
+int main() {
+  cout << "Creating the fractions 3/4, 5/6, 1/2, and 1." << endl;
+  Fraction f1(3,4), f2(5,6), f3(1,2), f4(1);
+  cout << "The results of the following multiplications are: " << endl;
+
+
+  cout << "3/4 * 5/6 = " << (f1 * f2).toString() << endl;
+  cout << "3/4 * 1 = " << (f1 *f4).toString() << endl;
+
+  
+  Fraction f7, f8;
+  f7 = f2 * f3;
+  f8 = f2 * f4;
+  cout << "5/6 * 1/2 = " << f7.toString() << endl;
+  cout << "5/6 * 1 = " << f8.toString() << endl;
+
+  cout << "Now enter two fractions, which will be multplied." << endl;
+  Fraction f5, f6;
+  try {
+    cout << "Enter 1st fraction. ";
+    f5.readFraction();
+    cout << "Enter 2nd fraction. ";
+    f6.readFraction();
+    cout << f5.toString() << " * " << f6.toString() << " = " << (f5*f6).toString() << endl;
+  }
+  catch ( exception &e )
+    {
+      cerr << "Exception occurred: " << e.what() << endl;
+    }
+
+}
