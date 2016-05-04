@@ -1,6 +1,3 @@
-//2016JAN COS-213-OL011
-//Written Assignment 1 Part A Question 2
-
 //Write a program that reads data entered at run time consisting of positive integers and averages them. 
 //Assume the data entered does not get a preset number of data items. 
 //The last number of the data set should be a -999. Make sure to include appropriate input and output statements.
