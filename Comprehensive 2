@@ -1,0 +1,44 @@
+//2016JAN COS-213-OL011
+//Comprehensive Programming Assignment Problem 2
+
+//Create a program that takes the temperatures as input and provides as output your sports decision. 
+//(Assume that temperatures are only expressed as integers.) 
+//In the program include 2 void functions titled getTemp and printActivity, each with an int argument.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	// define a variable for temperature
+	int temp;
+	
+	// Function prototypes
+	void getTemp(int *);
+	void printActivity(int);
+	
+	// Request user input for temperature using a pointer. 
+	getTemp(&temp);
+	
+	// displays activity based on temp input
+	printActivity(temp);
+}
+
+void getTemp(int *temp) {
+	cout << "Please enter the temperature (in degrees F): ";
+	cin >> *temp;
+}
+
+void printActivity(int temp) {
+	cout << "Today's activity is ";
+
+	// activity based on the temperature
+	if(temp > 85)
+		cout << "swimming";
+	else if(temp > 70)
+		cout << "baseball";
+	else if(temp > 32)
+		cout << "basketball";
+	else
+		cout << "nothing. Go home!!!";
+	cout << "." << endl;
+}
