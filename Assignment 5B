@@ -1,0 +1,39 @@
+//2016JAN COS-213-OL011
+//Written Assignment 5 B Question 1
+
+/*Create a function template that computes and displays the absolute value of a passed argument. 
+(By "absolute value" we mean that the template returns the number with no sign, whether the passed argument number is positive or negative.)
+Create a program that uses this function template, passing in two arguments of type int, float, and double variable.
+Have the template produce as output "The absolute value of number is (put in absolute value of number here)."*/
+
+
+#include <iostream>
+using namespace std;
+
+template< typename XXX >
+XXX theAbs( const XXX entry ) {
+  if(entry > 0)
+    return entry;
+  else
+    return 0 - entry;
+}
+
+int main() {
+  int A = 5, B = -14, C = 0;
+  float D = 16.2, E = -15, F = -0.0;
+  double G = 1000.749, H = -2749.8130, I = -0;
+
+  cout << "The absolute values of 5, -14, and 0 are: ";
+  cout << theAbs(A) << "   " << theAbs(B) << "   " << theAbs(C) << endl;
+
+  cout << "The absolute values of 16.2, -15, and -0.0 are: ";
+  cout << theAbs(D) << "   " << theAbs(E) << "   " << theAbs(F) << endl;
+
+  cout << "The absolute values of 1000.749, -2749.8130, and -0 are: ";
+  cout << theAbs(G) << "   " << theAbs(H) << "   " << theAbs(I) << endl;
+
+  cout << "Please enter a number: ";
+  float J;
+  cin >> J;
+  cout << "The absolute value of " << J << " is: " << theAbs(J) << endl;
+}
