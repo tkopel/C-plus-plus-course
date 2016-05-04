@@ -1,0 +1,45 @@
+//2016JAN COS-213-OL011
+//Written Assignment 1 Part A Question 2
+
+//Write a program that reads data entered at run time consisting of positive integers and averages them. 
+//Assume the data entered does not get a preset number of data items. 
+//The last number of the data set should be a -999. Make sure to include appropriate input and output statements.
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	//displays user instructions//
+	cout << "Please enter positive integers to be averaged.\n";
+	cout << "When you are finished with input enter -999\n\n";
+	
+	//declares variables//
+	float total = 0;
+	float average;
+	float numCounter = 0;
+	
+	
+	//user prompt for data entry//
+	cout << "Enter a positive integer or -999 to quit: "; 
+	int num = 0;
+	cin >> num;
+	
+	//every number entered is added to the variable total.
+	//each time a number is entered numCounter increases by 1
+	
+	while (num != -999)
+	{
+		total = total + num;
+		numCounter = numCounter + 1;
+		cout << "Enter a positive integer or -999 to quit: ";
+		cin >> num;
+	}
+	
+	//when user input equals sentinel, compute average
+	if (num == -999)
+	{
+		average = total / numCounter;
+		cout << "The average of the numbers entered is: " << average << endl;
+	}
+}
