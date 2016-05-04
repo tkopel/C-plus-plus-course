@@ -1,5 +1,3 @@
-//2016JAN COS-213-OL011
-//Written Assignment 5 B Question 1
 
 /*Create a function template that computes and displays the absolute value of a passed argument. 
 (By "absolute value" we mean that the template returns the number with no sign, whether the passed argument number is positive or negative.)
