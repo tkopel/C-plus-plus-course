@@ -1,0 +1,52 @@
+//2016JAN COS-213-OL011
+//Written Assignment 4 Section B Question 2
+
+//Create a person class to represent a person. 
+//(You may call the class personType.) 
+//To simplify things, have the class have 2 variable members for the person's first and last name. 
+//Include 2 constructors. One should be a default constructor and the other should be one with parameters. 
+//Include respective functions for:
+            //setting the name,
+           //getting the name, and
+          //printing the name on the screen.
+//Have your main program call these functions to demonstrate how they work
+
+#include <iostream>
+using namespace std;
+
+class personType{
+public:
+	personType() {
+		fName = "WhoDat";
+		lName = "WhoDat";
+	}
+	
+	personType(string first, string last) {
+		fName = first;
+		lName = last;
+	}
+	
+	void FirstName(string name) {
+		fName = name;
+	}
+	void LastName(string name) {
+		lName = name;
+	}
+	
+	void printName() {
+		cout << fName << " " << lName << endl;
+	}
+	
+private:
+	string fName;
+	string lName;
+	
+};
+
+int main() {
+	personType johndoe;
+	personType taylor("Taylor", "Kopel");
+	johndoe.printName();
+	taylor.printName();
+	
+}
