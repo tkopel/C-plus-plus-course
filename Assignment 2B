@@ -1,0 +1,49 @@
+//2016JAN COS-213-OL011
+//Written Assignment 2 Part B
+
+//Design and run a program that takes a numerical score and outputs a 
+//letter grade.
+
+
+#include <iostream>
+using namespace std;
+
+void getScore(int& score) //function to display user instruction and allow user input
+{
+ cout << "This program will take a numerical grade and convert it into a letter grade.";
+ cout << "\nPlease input the numerical grade score: ";
+        cin >> score;
+         cout << "You entered a score of "<<score<<endl;
+        }
+void printGrades(int score) //if else if loop to determine where the numerical grade falls letter wise
+{
+    if (score >= 0.00 && score <= 59.00)
+    {
+         cout << "The letter grade is an F. Yikes.";
+    }
+    else if (score >= 60.00 && score <= 69.00)
+    {
+         cout << "The letter grade is a D. Did you study? ";
+    }
+    else if (score >= 70.00 && score <= 79.00)
+    {
+         cout << "The letter grade is a C. You passed.";
+    }
+    else if (score >= 80.00 && score <= 89.00)
+    {
+         cout << "The letter grade is a B. Good work!";
+    }
+    else if (score >= 90.00 && score <= 100.00)
+    {    
+         cout << "The letter grade is an A. Excellent work!";
+    }
+}
+ 
+int main()
+{
+int score; //declares score as a variable
+score = 0; // initializes score with a value of 0
+getScore(score); //user entry now determines numerical value of score
+printGrades(score); //numerical value is given letter value
+ return 0;
+}
