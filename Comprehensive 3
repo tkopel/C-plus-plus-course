@@ -1,0 +1,36 @@
+//Comprehensive Programming Assignment Problem 3
+//Define a class called Revenue that has 2 private members of demand and price. 
+//Include a constructor and a public function that calculates the RevenueValue of the class.
+// RevenueValue = demand * price
+//Use public functions of the class in a program that computes RevenueValue and 
+//displays RevenueValue when demand is 2000 and price is 2.  
+
+#include <iostream>
+using namespace std;
+
+// create class for Revenue
+class Revenue {
+public:
+	Revenue(int startDemand = 1, int startPrice = 1) {
+		demand = startDemand;
+		price = startPrice;
+		
+	}
+	
+	float solveRevenueValue() {
+		return(demand*price);
+	}
+//create private members of demand and price	
+private:
+	float demand, price;
+};
+
+
+int main() {
+	// Declare a revenue object with demand 2000 and price 2
+	Revenue rev1(2000, 2);
+	
+	// Print the revenue value of the object declared above
+	cout << "The revenue value when demand is 2000 and price is 2: " << rev1.solveRevenueValue() <<
+			endl;
+}
