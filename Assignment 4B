@@ -1,6 +1,3 @@
-//2016JAN COS-213-OL011
-//Written Assignment 4 Section B Question 2
-
 //Create a person class to represent a person. 
 //(You may call the class personType.) 
 //To simplify things, have the class have 2 variable members for the person's first and last name. 
